@@ -1,0 +1,27 @@
+Mar 16, 2024 3:26:38 PM klab.app.Node main
+INFO: Entering in Node through socket: 10.63.25.176:50722
+Mar 16, 2024 3:26:43 PM klab.app.SenderRunner run
+INFO: Sending: Search: ID=5A68232B4F6141BEA89960E359F958 TTL=49 Routing=BREADTHFIRST Search=o
+Mar 16, 2024 3:26:43 PM klab.app.ReceiveRunner run
+INFO: Received: Response: ID=5A68232B4F6141BEA89960E359F958 TTL=5 Routing=BREADTHFIRST Host=129.62.148.23:24681 [Result: FileID=1CA4780B FileSize=1024268 bytes FileName=bob, Result: FileID=C9D36EE0 FileSize=3 bytes FileName=bobby, Result: FileID=CAB1E16C FileSize=4 bytes FileName=robob]
+Mar 16, 2024 3:26:46 PM klab.app.SenderRunner run
+INFO: Sending: Search: ID=AD33DED7C77A34E5B81D7D26ADE30E TTL=49 Routing=BREADTHFIRST Search=xp
+Mar 16, 2024 3:26:48 PM klab.app.ReceiveRunner run
+INFO: Closing node: java.net.SocketException: Socket closed
+java.io.IOException: java.net.SocketException: Socket closed
+	at klab.serialization.Message.decode(Message.java:254)
+	at klab.app.ReceiveRunner.run(ReceiveRunner.java:161)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endRead(NioSocketImpl.java:243)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:291)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:325)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:312)
+	at klab.serialization.MessageInput.readOnce(MessageInput.java:77)
+	at klab.serialization.Message.decode(Message.java:187)
+	... 2 more
+
